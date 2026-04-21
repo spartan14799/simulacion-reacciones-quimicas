@@ -19,4 +19,4 @@ reacciones químicas.
 ## Instalación rápida
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/simulacion-reacciones-quimicas-julia.git
+   git clone https://github.com/spartan14799/simulacion-reacciones-quimicas.git
