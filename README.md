@@ -1,4 +1,4 @@
-# Simulación numérica de reacciones químicas con Julia
+# Simulación Numérica de Reacciones Químicas con Julia
 
 Este repositorio contiene el código y la documentación del proyecto
 *Estudio Comparativo de Estabilidad y Rigidez de Integradores Numéricos en
