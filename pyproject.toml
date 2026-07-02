@@ -1,0 +1,25 @@
+
+[build-system]
+requires = ["scikit-build-core>=0.5.0", "pybind11>=2.11.0", "ninja"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "stiff_reactions"
+version = "0.1.0"
+description = "explicit and implicit methods comparison for odes in stiff equations associated to chemical reactions"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.22.0",
+    "matplotlib>=3.5.0",
+    "ipywidgets>=8.0.0",
+    "notebook>=7.0.0",
+]
+
+[tool.scikit-build]
+cmake.version = ">=3.15"
+ninja.version = ">=1.10"
+cmake.args = ["-G", "Ninja"]
+
+[tool.scikit-build.cmake.define]
+pybind11_DIR = { env = "pybind11_DIR" }

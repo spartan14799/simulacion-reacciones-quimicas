@@ -1,0 +1,20 @@
+
+# entornos y herramientas
+.venv/
+.pixi/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+uv.lock
+
+# compilacion cpp y cmake
+build/
+CMakeUserPresets.json
+.cmake/
+
+# archivos os
+.DS_Store
+Thumbs.db
