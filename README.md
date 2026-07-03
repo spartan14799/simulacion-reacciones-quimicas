@@ -1,7 +1,7 @@
 
 ## Running Pluto Notebooks
 
-````julia
+```julia
 using Pluto, Pkg, Plots
 Pkg.add("Pluto")
 Pkg.add("Plots")
