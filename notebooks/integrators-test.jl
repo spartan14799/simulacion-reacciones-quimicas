@@ -121,8 +121,6 @@ end
 md"""
 # Comparación de Integradores
 
-A continuación se comparan las aproximaciones obtenidas con los métodos explícitos e implícitos para el PVI propuesto, junto con la solución exacta.
-
 Al tratarse de un problema rígido, los métodos explícitos tienen problemas de estabilidad cuando el tamaño de paso es relativamente grande.
 
 - **Euler explícito** oscila y diverge.
@@ -135,11 +133,8 @@ Por el contrario, los métodos implícitos son estables y aproximan cercanamente
 
 """
 
-# ╔═╡ a0bf1597-f1f6-4be5-892d-8b9d979f7ba1
-
-
 # ╔═╡ Cell order:
-# ╟─a2fe7350-7672-11f1-ab48-dbc0621b8d90
+# ╠═a2fe7350-7672-11f1-ab48-dbc0621b8d90
 # ╟─44f3e388-a052-43d8-88c6-85d8ec17c5af
 # ╠═4c39df53-8975-4e6e-9649-afe9946c290d
 # ╠═9a957e08-e74f-49d5-94c5-beadce2b8352
@@ -151,5 +146,4 @@ Por el contrario, los métodos implícitos son estables y aproximan cercanamente
 # ╠═7cdfbfe3-51e5-4188-92c8-cba8d2e6f070
 # ╟─7d97bb6f-484a-4565-9f6d-34f3de6ec01d
 # ╠═9a4e667d-5f7f-4cf6-86cb-f57f215481b1
-# ╟─1b49054a-915a-4966-b7b3-2f5e6f1bbba9
-# ╠═a0bf1597-f1f6-4be5-892d-8b9d979f7ba1
+# ╠═1b49054a-915a-4966-b7b3-2f5e6f1bbba9
