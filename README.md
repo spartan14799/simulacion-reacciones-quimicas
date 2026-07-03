@@ -50,7 +50,7 @@ Martínez Alba, Nicolás - nmartineza@unal.edu.co
 Developed by:
 
 - Martínez Sáenz, Sebastián - sebmartinez@unal.edu.co
-- Huertas Serrano, Juan Esteban - tjhuertass@unal.edu.co
+- Huertas Serrano, Juan Esteban - jhuertass@unal.edu.co
 
 ## License
 This project is licensed under the MIT license. See the [LICENCE](LICENSE) file for details.
