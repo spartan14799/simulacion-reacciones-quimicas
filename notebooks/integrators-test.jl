@@ -6,11 +6,8 @@ using InteractiveUtils
 
 # ╔═╡ a2fe7350-7672-11f1-ab48-dbc0621b8d90
 begin
-    using Pkg #gestor de paquetes
+    using Pkg, LinearAlgebra, ForwardDiff, Plots
     Pkg.activate("..") #activa el ambiente en root
-
-	using Plots
-    using LinearAlgebra
 
     include("../src/integrators.jl")
 end
@@ -25,8 +22,8 @@ begin
     s0 = [1.0]
 
     tinit = 0.0
-    tend = 1.5
-    dt = 0.1
+    tend = 2.0
+    dt = 0.45
 end
 
 # ╔═╡ bcc935b4-d812-4a21-93ce-4cf08095acb5
@@ -60,7 +57,11 @@ md"""
 """
 
 # ╔═╡ 7cdfbfe3-51e5-4188-92c8-cba8d2e6f070
-sol_exacta = exp.(-5*t_euler)
+
+begin
+	t_exacta = range(tinit, tend, length=1000) #malla mas fina pa la exacta
+	sol_exacta = exp.(-5 .* t_exacta)
+end
 
 # ╔═╡ 7d97bb6f-484a-4565-9f6d-34f3de6ec01d
 md"""
@@ -72,19 +73,19 @@ begin
 	plot(
 	    t_euler,
 	    first.(s_euler),
-	    label="Euler",
+	    label="euler explícito",
 	    lw=2,
 	    xlabel="t",
 	    ylabel="y(t)"
 	)
 	
-	plot!(t_heun, first.(s_heun), label="Heun", lw=2)
-	plot!(t_rk4, first.(s_rk4), label="RK4", lw=2)
-	plot!(t_ie, first.(s_ie), label="Euler implícito", lw=2)
-	plot!(t_cn, first.(s_cn), label="Crank-Nicolson", lw=2)
+	plot!(t_heun, first.(s_heun), label="heun", lw=2)
+	plot!(t_rk4, first.(s_rk4), label="rk4", lw=2)
+	plot!(t_ie, first.(s_ie), label="euler implícito", lw=2)
+	plot!(t_cn, first.(s_cn), label="crank nicolson", lw=2)
 	
 	plot!(
-	    t_euler,
+	    t_exacta,
 	    sol_exacta,
 	    label="Exacta",
 	    lw=3,

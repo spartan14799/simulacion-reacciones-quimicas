@@ -100,22 +100,22 @@ function integrate_implicit_euler(fderiv, s, tinit, tend, dt)
 
         dsdt = fderiv(s_actual, t)
 
-        #predictor de euler explicito
-        s_guess = s_actual .+ dt .* dsdt
-        s_next = copy(s_guess)
-        #iteracion de punto fijo
+        # explicit euler predictor
+        s_next = s_actual .+ dt .* dsdt
+
         for _ in 1:max_iter
 
-            f_next = fderiv(s_guess, t + dt)
-            s_next = s_actual .+ dt .* f_next
+            #buscar raiz de esta xd
+            G(x) = x .- s_actual .- dt .* fderiv(x, t + dt)
+            J = ForwardDiff.jacobian(G, s_next)
 
-            error = norm(s_next - s_guess)
+            #newton rhapson
+            delta = (-J) \ (G(s_next))
+            s_next .+= delta
 
-            if error < tolerancia
+            if norm(delta) < tolerancia
                 break
             end
-
-            s_guess = s_next
         end
 
         s_actual = s_next
@@ -144,25 +144,25 @@ function integrate_crank_nicolson(fderiv, s, tinit, tend, dt)
         push!(historial_s, copy(s_actual))
 
         dsdt = fderiv(s_actual, t)
-        s_guess = s_actual .+ dt .* dsdt
-        s_next = copy(s_guess)
+
+        s_next = s_actual .+ dt .* dsdt
+
         for _ in 1:max_iter
 
-            f_next = fderiv(s_guess, t + dt)
+            G(x) = x .- s_actual .- 0.5 .* dt .* (dsdt .+ fderiv(x, t + dt))
 
-            s_next = s_actual .+ 0.5 .* dt .* (dsdt .+ f_next)
+            J = ForwardDiff.jacobian(G, s_next)
+            delta = -J \ G(s_next)
+            s_next .+= delta
 
-            error = norm(s_next - s_guess)
-
-            if error < tolerancia
+            if norm(delta) < tolerancia
                 break
             end
-
-            s_guess = s_next
         end
 
         s_actual = s_next
         t += dt
+
     end
 
     return historial_t, historial_s
