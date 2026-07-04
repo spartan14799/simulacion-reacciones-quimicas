@@ -248,4 +248,4 @@ Estos resultados evidencian que, en problemas rígidos, la estabilidad numérica
 # ╟─bb50e7a4-e84a-4282-b36e-b1f13190c942
 # ╠═7e557ce5-bad8-4c3c-8476-054e74ee96b0
 # ╠═796d9c8a-285a-4b41-bd93-33c336393cc4
-# ╠═c99f18db-f9e4-410e-b620-d9967a6e5216
+# ╟─c99f18db-f9e4-410e-b620-d9967a6e5216

@@ -12,22 +12,22 @@ This project compares implicit and explicit numerical methods for solving stiff 
 ## Pluto Notebooks
 
 To open and run the Pluto notebooks, first start Julia from the `notebooks/` directory.  
-Install the required packages (only once):
+then, install the required packages **(only once)**:
 
-```julia
+```bash
 using Pkg
 Pkg.add(["Pluto", "ForwardDiff", "Plots"])
 ```
 
 Load the required packages:
 
-```julia
-using Pluto, LinearAlgebra, ForwardDiff, Plots
+```bash
+using Pluto, ForwardDiff, Plots
 ```
 
 Launch Pluto:
 
-```julia
+```bash
 Pluto.run()
 ```
 
